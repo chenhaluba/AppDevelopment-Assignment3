@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Schemas</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="page-container">
+
+    <header class="header">
+        <div>
+            <p class="assignment-title">HTTP Quest</p>
+            <h1>Resource Schemas</h1>
+            <p class="subtitle">Fields and data types of the resources.</p>
+        </div>
+
+        <a class="schemas-button" href="/">Back to Game</a>
+    </header>
+
+    <main class="schemas-grid">
+
+        <% schemas.forEach(function(schema) { %>
+
+            <section class="card schema-card">
+
+                <h2><%= schema.resource %></h2>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Field</th>
+                            <th>Type</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        <% schema.fields.forEach(function(field) { %>
+                            <tr>
+                                <td><%= field.name %></td>
+                                <td><%= field.type %></td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+
+            </section>
+
+        <% }); %>
+
+    </main>
+
+</div>
+
+</body>
+</html>
